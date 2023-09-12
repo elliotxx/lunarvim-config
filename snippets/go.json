@@ -1,0 +1,147 @@
+{
+    "forr": {
+        "description": "range map",
+        "prefix": "forr",
+        "body": [
+            "for k,v := range $1{",
+            "\t$0",
+            "}"
+        ],
+        "scope": "go"
+    },
+    "slice.av": {
+        "description": "Slice Append Vector",
+        "prefix": "slice.av",
+        "body": [
+            "${1: arr} = append($1, ${vec:2}...)"
+        ],
+        "scope": "go"
+    },
+    "slice.copy": {
+        "description": "Slice Copy",
+        "prefix": "slice.copy",
+        "body": [
+            "${1:dest} = make([]${2:int}, len(${3:src}))",
+            "copy($1, $3)"
+        ],
+        "scope": "go"
+    },
+    "slice.cut": {
+        "body": "a = append(a[:i], a[j:]...)",
+        "prefix": "slice.cut",
+        "description": "a = append(a[:i], a[j:]...)",
+        "scope": "go"
+    },
+    "slice.delete": {
+        "body": "a = append(a[:i], a[i+1:]...)",
+        "prefix": "slice.delete",
+        "description": "a = append(a[:i], a[i+1:]...)",
+        "scope": "go"
+    },
+    "slice.extend": {
+        "body": "a = append(a, make([]T, j)...)",
+        "prefix": "slice.extend",
+        "description": "a = append(a, make([]T, j)...)",
+        "scope": "go"
+    },
+    "slice.insert": {
+        "body": "a = append(a[:i], append([]T{x}, a[i:]...)...)",
+        "prefix": "slice.insert",
+        "description": "a = append(a[:i], append([]T{x}, a[i:]...)...)",
+        "scope": "go"
+    },
+    "slice.unshift": {
+        "body": "a = append([]T{x}, a...)",
+        "prefix": "slice.unshift",
+        "description": "a = append([]T{x}, a...)",
+        "scope": "go"
+    },
+    "slice.push": {
+        "body": "a = append(a, x)",
+        "prefix": "slice.push",
+        "description": "a = append(a, x)",
+        "scope": "go"
+    },
+    "slice.pop": {
+        "body": "x, a = a[0], a[1:]",
+        "prefix": "slice.pop",
+        "description": "x, a = a[0], a[1:]",
+        "scope": "go"
+    },
+    "slice.popback": {
+        "body": "x, a = a[len(a) -1], a[:len(a) -1]",
+        "prefix": "slice.popback",
+        "description": "x, a = a[len(a) -1], a[:len(a) -1]",
+        "scope": "go"
+    },
+    "go-package": {
+        "prefix": "package",
+        "body": [
+            "package ${1}",
+            "\t${2}"
+        ],
+        "description": "declare go package"
+    },
+    "go-import-m": {
+        "prefix": "import",
+        "body": [
+            "import (",
+            "\t\"${1}\"",
+            ")"
+        ],
+        "description": "multiple packages"
+    },
+    "go-import-s": {
+        "prefix": "import",
+        "body": [
+            "import \"${1}\""
+        ],
+        "description": "single packages"
+    },
+    "go-func": {
+        "prefix": "func",
+        "body": [
+            "func ${1}() ${2} {",
+            "\t${3}",
+            "}"
+        ],
+        "description": "function"
+    },
+    "go-function-main": {
+        "prefix": "func-main",
+        "body": [
+            "func main()  {",
+            "\t${1}",
+            "}"
+        ],
+        "description": "main function"
+    },
+    "go-struct": {
+        "prefix": "struct",
+        "body": [
+            "type ${1} struct {",
+            "\t${2}",
+            "}"
+        ],
+        "description": "struct"
+    },
+    "go-interface": {
+        "prefix": "interface",
+        "body": [
+            "type ${1} interface {",
+            "\t${2}() ${3}",
+            "}"
+        ],
+        "description": "struct"
+    },
+    "go-error": {
+        "scope": "go,golang",
+        "prefix": "iferr",
+        "body": [
+            "if err != nil {",
+            "\t${0}",
+            "}"
+        ],
+        "description": "if err != nil block"
+    }
+}
