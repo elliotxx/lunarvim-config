@@ -39,9 +39,7 @@ lvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
 `lvim`是 LunarVim 官方提供的启动脚本，可以与原来的配置隔离开来。
 
-## 功能介绍
-
-### 目录结构
+## 目录结构
 
 ```txt
 lvim/
