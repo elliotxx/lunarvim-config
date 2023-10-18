@@ -1,3 +1,4 @@
 /plugin/
 lv-settings.lua
 log
+.luarc.json
