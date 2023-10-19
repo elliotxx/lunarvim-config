@@ -1,12 +1,13 @@
 local M = {}
+local linters, formatters
 
 M.config = function()
     -- Generic LSP settings
     lvim.lsp.installer.setup.automatic_installation = true
-    lvim.lsp.installer.setup.ensure_installed = {"gopls", "lua_ls"},
+    lvim.lsp.installer.setup.ensure_installed = {"gopls", "lua_ls"}
 
     -- Linters
-    local linters = require "lvim.lsp.null-ls.linters"
+    linters = require "lvim.lsp.null-ls.linters"
     linters.setup({
         { command = "golangci_lint",                                                        filetypes = { "go" } },
         { filetypes = { "sh" },                                                             command = "shellcheck" },
@@ -26,7 +27,7 @@ M.config = function()
     lvim.format_on_save = { enabled = true, pattern = "*", timeout = 2000 }
     -- set a formatter, this will override the language server formatting capabilities
     -- (if it exists)
-    local formatters = require "lvim.lsp.null-ls.formatters"
+    formatters = require "lvim.lsp.null-ls.formatters"
     formatters.setup {
         { command = "gofumpt",     filetypes = { "go" } },
         { command = "goimports",   filetypes = { "go" } },
