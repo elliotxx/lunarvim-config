@@ -118,41 +118,8 @@ M.config = function()
         },
 
         -- fzf for search
-        { 'junegunn/fzf',      build = ":call fzf#install()" },
+        { 'junegunn/fzf',    build = ":call fzf#install()" },
         { 'junegunn/fzf.vim' },
-
-        -- copilot
-        { "github/copilot.vim" },
-
-        -- copilot-cmp
-        {
-            "zbirenbaum/copilot.lua",
-            cmd = "Copilot",
-            -- event = "InsertEnter",
-            config = function()
-                require("copilot").setup({
-                    suggestion = { enabled = false },
-                    panel = { enabled = false },
-                    filetypes = {
-                        yaml = false,
-                        markdown = false,
-                        help = false,
-                        gitcommit = false,
-                        gitrebase = false,
-                        hgcommit = false,
-                        svn = false,
-                        cvs = false,
-                        go = false,
-                    },
-                })
-            end,
-        },
-        {
-            "zbirenbaum/copilot-cmp",
-            config = function()
-                require("copilot_cmp").setup()
-            end
-        },
 
         -- Colorschemes
         {

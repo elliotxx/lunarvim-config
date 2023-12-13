@@ -3,8 +3,8 @@ local linters, formatters
 
 M.config = function()
     -- Generic LSP settings
-    lvim.lsp.installer.setup.automatic_installation = true
-    lvim.lsp.installer.setup.ensure_installed = {"gopls", "lua_ls"}
+    lvim.lsp.installer.setup.automatic_installation = false
+    lvim.lsp.installer.setup.ensure_installed = { "gopls", "lua_ls" }
 
     -- Linters
     linters = require "lvim.lsp.null-ls.linters"
