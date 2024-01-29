@@ -4,24 +4,40 @@ local linters, formatters
 M.config = function()
     -- Generic LSP settings
     lvim.lsp.installer.setup.automatic_installation = false
-    lvim.lsp.installer.setup.ensure_installed = { "gopls", "lua_ls" }
+    lvim.lsp.installer.setup.ensure_installed = { "gopls", "lua_ls", "javascriptreact" }
 
     -- Linters
     linters = require "lvim.lsp.null-ls.linters"
-    linters.setup({
-        { command = "golangci_lint",                                                        filetypes = { "go" } },
-        { filetypes = { "sh" },                                                             command = "shellcheck" },
-        { filetypes = { "python" },                                                         command = "pylint" },
-        { filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact" }, command = "eslint" },
-        { filetypes = { "html" },                                                           command = "tidy" },
-        { filetypes = { "css" },                                                            command = "stylelint" },
+    linters.setup(
         {
-            filetypes = { "markdown" },
-            command = "markdownlint",
-            args = {
-                "--disable", "MD013" }
-        },
-    })
+            {
+                filetypes = { "go" }, command = "golangci_lint"
+            },
+            {
+                filetypes = { "sh" }, command = "shellcheck"
+            },
+            {
+                filetypes = { "python" }, command = "pylint"
+            },
+            {
+                filetypes = {
+                    "javascript", "typescript", "javascriptreact", "typescriptreact"
+                },
+                command = "eslint"
+            },
+            {
+                filetypes = { "html" }, command = "tidy" },
+            {
+                filetypes = { "css" }, command = "stylelint" },
+            {
+                filetypes = { "markdown" },
+                command = "markdownlint",
+                args = {
+                    "--disable", "MD013"
+                }
+            },
+        }
+    )
 
     -- Formatters
     lvim.format_on_save = { enabled = true, pattern = "*", timeout = 2000 }
