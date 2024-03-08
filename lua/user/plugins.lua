@@ -273,7 +273,9 @@ M.config = function()
                     "Toggle Flash Search"
                 },
             },
-        }
+        },
+
+        {"soulis-1256/hoverhints.nvim"},
     }
 end
 
