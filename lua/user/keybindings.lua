@@ -13,6 +13,12 @@ M.config = function()
     -- lvim.keys.normal_mode["<C-K>"] = "<C-w>k"
     -- lvim.keys.normal_mode["<C-L>"] = "<C-w>l"
 
+    -- Better window navigation
+    lvim.keys.normal_mode["<m-h>"] = "<C-w>h"
+    lvim.keys.normal_mode["<m-j>"] = "<C-w>j"
+    lvim.keys.normal_mode["<m-k>"] = "<C-w>k"
+    lvim.keys.normal_mode["<m-l>"] = "<C-w>l"
+
     lvim.keys.normal_mode["<C-j>"] = "5j"
     lvim.keys.normal_mode["<C-k>"] = "5k"
     lvim.keys.normal_mode["<C-h>"] = "5h"
