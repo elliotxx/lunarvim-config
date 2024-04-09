@@ -54,9 +54,20 @@ M.config = function()
             command = "yapf",
             args = { "--style={based_on_style: google, column_limit: 120, indent_width: 4}" }
         },
-        { filetypes = { "lua" },                                                            command = "stylua" },
-        { filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact" }, command = "prettier" },
-        { filetypes = { "html", "css", "markdown" },                                        command = "prettier" },
+        {
+            filetypes = { "lua" },
+            command = "stylua"
+        },
+        {
+            filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
+            command = "prettier",
+            args = { "--tab-width", "4" }
+        },
+        {
+            filetypes = { "html", "css", "markdown" },
+            command = "prettier",
+            args = { "--tab-width", "4" }
+        },
     }
 end
 
