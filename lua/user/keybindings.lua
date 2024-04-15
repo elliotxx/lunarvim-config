@@ -25,6 +25,9 @@ M.config = function()
 
     lvim.keys.normal_mode["H"] = "^"
     lvim.keys.normal_mode["L"] = "$"
+
+    -- Support for pasting text without copying underlying visual-selected text.
+    lvim.keys.visual_mode["p"] = '"_dP'
 end
 
 return M
