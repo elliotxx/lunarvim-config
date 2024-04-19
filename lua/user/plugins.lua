@@ -276,6 +276,9 @@ M.config = function()
         },
 
         { "soulis-1256/hoverhints.nvim" },
+
+        -- A simple word switch plugin with neovim
+        { 'tandy1229/wordswitch.nvim' },
     }
 end
 

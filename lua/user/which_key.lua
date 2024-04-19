@@ -215,6 +215,7 @@ M.config = function()
             i = { "<cmd>lua require('refactoring').refactor('Inline Variable')<CR>", "Inline Variable" },
             b = { "<cmd>lua require('refactoring').refactor('Extract Block')<CR>", "Extract Block" },
             B = { "<cmd>lua require('refactoring').refactor('Extract Block To File')<CR>", "Extract Block To File" },
+            s = { "<cmd>WordSwitch<CR>", "Word Switch" },
         },
 
         s = {
