@@ -12,6 +12,8 @@ M.config = function()
     vim.opt.wrap = true     -- wrap lines
     vim.opt.textwidth = 80
     vim.opt.autoread = true -- auto reload files changed outside of vim
+    vim.opt.cursorline = true
+    vim.opt.cursorcolumn = true
 
     --- config for nvim-ufo
     vim.o.foldcolumn = '1' -- '0' is not bad

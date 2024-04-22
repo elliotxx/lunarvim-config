@@ -23,6 +23,11 @@ M.config = function()
     lvim.keys.normal_mode["<C-k>"] = "5k"
     lvim.keys.normal_mode["<C-l>"] = "<C-w>l"
 
+    -- keeps your cursor at the center of the screen in all contexts.
+    lvim.keys.normal_mode["k"] = "kzz"
+    lvim.keys.normal_mode["j"] = "jzz"
+    lvim.keys.normal_mode["n"] = "nzzzv"
+
     lvim.keys.normal_mode["H"] = "^"
     lvim.keys.normal_mode["L"] = "$"
 
