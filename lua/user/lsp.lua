@@ -4,7 +4,7 @@ local linters, formatters
 M.config = function()
     -- Generic LSP settings
     lvim.lsp.installer.setup.automatic_installation = false
-    lvim.lsp.installer.setup.ensure_installed = { "gopls", "lua_ls", "javascriptreact" }
+    lvim.lsp.installer.setup.ensure_installed = { "gopls", "lua_ls" }
 
     -- Linters
     linters = require "lvim.lsp.null-ls.linters"
@@ -29,13 +29,13 @@ M.config = function()
                 filetypes = { "html" }, command = "tidy" },
             {
                 filetypes = { "css" }, command = "stylelint" },
-            {
-                filetypes = { "markdown" },
-                command = "markdownlint",
-                args = {
-                    "--disable", "MD013"
-                }
-            },
+            -- {
+            --     filetypes = { "markdown" },
+            --     command = "markdownlint",
+            --     args = {
+            --         "--disable", "MD013"
+            --     }
+            -- },
         }
     )
 
@@ -61,12 +61,10 @@ M.config = function()
         {
             filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
             command = "prettier",
-            args = { "--tab-width", "4" }
         },
         {
-            filetypes = { "html", "css", "markdown" },
+            filetypes = { "html", "css" },
             command = "prettier",
-            args = { "--tab-width", "4" }
         },
     }
 end
