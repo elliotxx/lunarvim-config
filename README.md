@@ -29,6 +29,10 @@ LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.
 然后，安装本配置:
 
 ```sh
+# install dependency
+brew install rust node npm fd gnu-sed
+brew install --cask font-fira-code
+
 # backup original config
 mv ~/.config/lvim{,.bak}
 # install my config
