@@ -18,14 +18,21 @@ M.config = function()
         vim.api.nvim_set_keymap('t', '<D-v>', '<C-R>+', { noremap = true, silent = true })
         vim.api.nvim_set_keymap('v', '<D-v>', '<C-R>+', { noremap = true, silent = true })
 
+        vim.opt.title = true
+        vim.opt.cursorline = false
+        vim.opt.cursorcolumn = false
+
         vim.g.neovide_remember_window_size = true
         vim.g.neovide_remember_window_position = true
-        vim.g.neovide_remember_dimensions = true;
+        vim.g.neovide_remember_dimensions = true
         vim.g.neovide_input_use_logo = 1
-        vim.g.neovide_input_macos_alt_is_meta = true
-        vim.g.neovide_transparency = 1
+        vim.g.neovide_input_macos_option_key_is_meta = 'only_left'
         vim.g.neovide_refresh_rate = 65
-        vim.opt.title = true
+
+        vim.g.transparency = 0.8
+        vim.g.neovide_transparency = 0.8
+        vim.g.neovide_window_blurred = true
+
 
         vim.api.nvim_command([[
             augroup Neovide
