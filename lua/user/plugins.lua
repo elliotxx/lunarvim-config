@@ -305,6 +305,18 @@ M.config = function()
 
         -- A simple word switch plugin with neovim
         { 'tandy1229/wordswitch.nvim' },
+
+        -- Library of 35+ independent Lua modules improving overall
+        -- Neovim (version 0.7 and higher) experience with minimal effort.
+        -- https://github.com/echasnovski/mini.nvim
+        {
+            'echasnovski/mini.nvim',
+            version = '*',
+            config = function()
+                require('mini.files').setup {}
+            end,
+
+        },
     }
 end
 

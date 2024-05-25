@@ -42,6 +42,7 @@ M.config = function()
         ["o"] = { "<cmd>SymbolsOutline<cr>", "SymbolsOutline" },
         ["p"] = { "<cmd>Telescope projects<cr>", "Projects" },
         ["e"] = { "<cmd>NvimTreeToggle<CR>", "Explorer" },
+        ["E"] = { "<cmd>lua MiniFiles.open()<CR>", "MiniFiles Explorer" },
 
         b = {
             name = "Buffers",
