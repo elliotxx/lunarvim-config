@@ -7,11 +7,12 @@ M.config = function()
     -- lvim.colorscheme = "tokyonight-moon"
     -- lvim.colorscheme = "tokyonight-day"
 
-    vim.opt.shiftwidth = 4  -- the number of spaces inserted for each indentation
-    vim.opt.tabstop = 4     -- insert 2 spaces for a tab
-    vim.opt.wrap = true     -- wrap lines
+    vim.opt.shiftwidth = 4   -- the number of spaces inserted for each indentation
+    vim.opt.tabstop = 4      -- insert 4 spaces for a tab
+    vim.opt.wrap = true      -- wrap lines
+    vim.opt.expandtab = true -- replace tab with spaces
     vim.opt.textwidth = 80
-    vim.opt.autoread = true -- auto reload files changed outside of vim
+    vim.opt.autoread = true  -- auto reload files changed outside of vim
     vim.opt.cursorline = true
     vim.opt.cursorcolumn = true
 

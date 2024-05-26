@@ -228,7 +228,7 @@ M.config = function()
 
         -- stevearc/dressing.nvim
         -- Neovim plugin to improve the default vim.ui interfaces
-        -- { "stevearc/dressing.nvim" },
+        { "stevearc/dressing.nvim" },
 
         -- text-case.nvim
         -- Enter `ga` to jump to which-key
@@ -274,29 +274,25 @@ M.config = function()
                     "S",
                     mode = { "n", "o", "x" },
                     function() require("flash").treesitter() end,
-                    desc =
-                    "Flash Treesitter"
+                    desc = "Flash Treesitter"
                 },
                 {
                     "r",
                     mode = "o",
                     function() require("flash").remote() end,
-                    desc =
-                    "Remote Flash"
+                    desc = "Remote Flash"
                 },
                 {
                     "R",
                     mode = { "o", "x" },
                     function() require("flash").treesitter_search() end,
-                    desc =
-                    "Treesitter Search"
+                    desc = "Treesitter Search"
                 },
                 {
                     "<c-s>",
                     mode = { "c" },
                     function() require("flash").toggle() end,
-                    desc =
-                    "Toggle Flash Search"
+                    desc = "Toggle Flash Search"
                 },
             },
         },
@@ -313,9 +309,34 @@ M.config = function()
             'echasnovski/mini.nvim',
             version = '*',
             config = function()
+                -- Autocompletion and signature help plugin
+                require('mini.completion').setup {}
+                -- Show notifications
+                require('mini.notify').setup {}
+                -- Extend and create a/i textobjects
+                require('mini.ai').setup {}
+                -- Navigate and manipulate file system
+                -- Keymappings:
+                -- Toggle = '<leader>E'
                 require('mini.files').setup {}
+                -- Move any selection in any direction
+                -- Keymappings:
+                -- -- Move visual selection in Visual mode. Defaults are Alt (Meta) + hjkl.
+                -- left = '<M-h>',
+                -- right = '<M-l>',
+                -- down = '<M-j>',
+                -- up = '<M-k>',
+                require('mini.move').setup {}
+                -- Split and join arguments
+                -- Keymappings:
+                -- toggle = 'gS', -- Split if arguments are on single line, join
+                -- otherwise.
+                require('mini.splitjoin').setup {}
+                -- Fast and feature-rich surround actions
+                -- Keymappings:
+                -- add = 'sa', -- Add surrounding in Normal and Visual modes
+                require('mini.surround').setup {}
             end,
-
         },
     }
 end
