@@ -3,8 +3,13 @@ local linters, formatters
 
 M.config = function()
     -- Generic LSP settings
-    lvim.lsp.installer.setup.automatic_installation = false
-    lvim.lsp.installer.setup.ensure_installed = { "gopls", "lua_ls" }
+    lvim.lsp.installer.setup.automatic_installation = true
+    -- lvim.lsp.installer.setup.ensure_installed = { "gopls", "lua_ls", "tsserver" }
+    -- remove `jedi_language_server` from `skipped_servers` list
+    lvim.lsp.automatic_configuration.skipped_servers =
+        vim.tbl_filter(function(server)
+            return server ~= "mdx_analyzer"
+        end, lvim.lsp.automatic_configuration.skipped_servers)
 
     -- Linters
     linters = require "lvim.lsp.null-ls.linters"

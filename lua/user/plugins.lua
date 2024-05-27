@@ -318,7 +318,15 @@ M.config = function()
                 -- Navigate and manipulate file system
                 -- Keymappings:
                 -- Toggle = '<leader>E'
-                require('mini.files').setup {}
+                require('mini.files').setup {
+                    -- Customization of explorer windows
+                    windows = {
+                        -- Whether to show preview of file/directory under cursor
+                        preview = true,
+                        -- Width of preview window
+                        width_preview = 40,
+                    },
+                }
                 -- Move any selection in any direction
                 -- Keymappings:
                 -- -- Move visual selection in Visual mode. Defaults are Alt (Meta) + hjkl.
