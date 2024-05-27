@@ -10,19 +10,6 @@ M.config = function()
             cmd = "TroubleToggle",
         },
 
-        -- auto-save.nvim (https://github.com/Pocco81/auto-save.nvim)
-        -- automatically saving your work whenever you make changes to it
-        -- {
-        --     "Pocco81/auto-save.nvim",
-        --     cmd = "ASToggle", -- optional for lazy loading on command
-        --     config = function()
-        --         require("auto-save").setup {
-        --             trigger_events = { "BufLeave" },
-        --             debounce_delay = 1000, -- saves the file at most every `debounce_delay` milliseconds
-        --         }
-        --     end,
-        -- },
-
         -- auto-save.nvim is a lua plugin for automatically saving your changed buffers in Neovim
         -- Forked from auto-save.nvim as active development has stopped
         {
@@ -139,23 +126,18 @@ M.config = function()
         { "svrana/neosolarized.nvim", name = "neosolarized" },
         { "folke/tokyonight.nvim",    name = "tokyonight" },
 
-        -- -- glepnir/lspsaga.nvim
-        -- {
-        --     "glepnir/lspsaga.nvim",
-        --     branch = "main",
-        --     config = function()
-        --         require("lspsaga").setup {
-        --             ui = {
-        --                 -- This option only works in Neovim 0.9
-        --                 title = false,
-        --             },
-        --         }
-        --     end,
-        --     dependencies = {
-        --         { "nvim-tree/nvim-web-devicons" },
-        --         --Please make sure you install markdown and markdown_inline parser
-        --         { "nvim-treesitter/nvim-treesitter" }
-        -- },
+        -- glepnir/lspsaga.nvim
+        -- Improves the Neovim built-in LSP experience.
+        {
+            'nvimdev/lspsaga.nvim',
+            config = function()
+                require('lspsaga').setup({})
+            end,
+            dependencies = {
+                'nvim-treesitter/nvim-treesitter', -- optional
+                'nvim-tree/nvim-web-devicons',     -- optional
+            }
+        },
 
         -- j-hui/fidget.nvim. Standalone UI for nvim-lsp progress.
         {
@@ -166,7 +148,7 @@ M.config = function()
                     display = {
                         format_message = function(msg)
                             if string.find(msg.title, "Indexing") then
-                                return nil -- Ignore "Indexing..." progress messages
+                                return nil     -- Ignore "Indexing..." progress messages
                             end
                             if msg.message then
                                 return msg.message
@@ -179,7 +161,7 @@ M.config = function()
 
                 notification = {
                     view = {
-                        stack_upwards = false, -- Display notification items from bottom to top
+                        stack_upwards = false,     -- Display notification items from bottom to top
                     },
 
                     window = {
@@ -309,8 +291,6 @@ M.config = function()
             'echasnovski/mini.nvim',
             version = '*',
             config = function()
-                -- Autocompletion and signature help plugin
-                require('mini.completion').setup {}
                 -- Show notifications
                 require('mini.notify').setup {}
                 -- Extend and create a/i textobjects
@@ -350,6 +330,17 @@ M.config = function()
                 -- add = 'sa', -- Add surrounding in Normal and Visual modes
                 require('mini.surround').setup {}
             end,
+        },
+
+        -- Use treesitter to auto close and auto rename html tag
+        { 'windwp/nvim-ts-autotag' },
+
+        -- LSP signature hint as you type
+        {
+            "ray-x/lsp_signature.nvim",
+            event = "VeryLazy",
+            opts = {},
+            config = function(_, opts) require 'lsp_signature'.setup(opts) end
         },
     }
 end
