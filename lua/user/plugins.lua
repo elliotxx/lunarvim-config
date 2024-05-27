@@ -319,6 +319,11 @@ M.config = function()
                 -- Keymappings:
                 -- Toggle = '<leader>E'
                 require('mini.files').setup {
+                    -- General options
+                    options = {
+                        -- Whether to use for editing directories
+                        use_as_default_explorer = false,
+                    },
                     -- Customization of explorer windows
                     windows = {
                         -- Whether to show preview of file/directory under cursor
