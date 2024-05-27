@@ -7,7 +7,7 @@ M.config = function()
     -- To map <Esc> to exit terminal-mode:
     --   :tnoremap <Esc> <C-\><C-n>
     -- You can see :help terminal
-    vim.keymap.set('t', '<ESC><ESC>', [[<C-\><C-n>]])
+    vim.keymap.set('t', '<ESC>', [[<C-\><C-n>]])
 end
 
 return M

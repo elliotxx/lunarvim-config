@@ -11,12 +11,15 @@ M.config = function()
         -- Reference: https://github.com/neovide/neovide/issues/1396
         vim.opt.guifont = ""
 
-        -- Allow clipboard copy paste in neovim
-        -- Reference: https://neovide.dev/faq.html#how-can-i-use-cmd-ccmd-v-to-copy-and-paste
-        vim.api.nvim_set_keymap('', '<D-v>', '+p<CR>', { noremap = true, silent = true })
-        vim.api.nvim_set_keymap('!', '<D-v>', '<C-R>+', { noremap = true, silent = true })
-        vim.api.nvim_set_keymap('t', '<D-v>', '<C-R>+', { noremap = true, silent = true })
-        vim.api.nvim_set_keymap('v', '<D-v>', '<C-R>+', { noremap = true, silent = true })
+        -- Allow clipboard copy paste in neovide
+        -- Reference: https://neovide.dev/faq.html?highlight=paste#how-can-i-use-cmd-ccmd-v-to-copy-and-paste
+        vim.keymap.set('n', '<D-s>', ':w<CR>')          -- Save
+        vim.keymap.set('v', '<D-c>', '"+y')             -- Copy
+        vim.keymap.set('n', '<D-v>', '"+P')             -- Paste normal mode
+        vim.keymap.set('v', '<D-v>', '"+P')             -- Paste visual mode
+        vim.keymap.set('c', '<D-v>', '<C-R>+')          -- Paste command mode
+        vim.keymap.set('i', '<D-v>', '<ESC>"+Pi')       -- Paste insert mode
+        vim.keymap.set('t', '<D-v>', '<C-\\><C-n>"+Pi') -- Paste terminal mode
 
         vim.opt.title = true
         vim.opt.cursorline = false
