@@ -359,14 +359,16 @@ M.config = function()
                 filesystem = {
                     filtered_items = {
                         hide_dotfiles = false,
+                        hide_gitignored = false,
+                        never_show = {
+                            ".DS_Store",
+                            "thumbs.db"
+                        },
                         hide_by_name = {
                             "__pycache__",
                             ".git",
-                            ".vscode",
                             ".DS_Store",
-                        },
-                        never_show_by_pattern = {
-                            ".null-ls_*",
+                            "node_modules"
                         },
                     },
                     window = {
