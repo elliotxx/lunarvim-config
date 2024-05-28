@@ -48,7 +48,7 @@ M.config = function()
         ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
         ["o"] = { "<cmd>SymbolsOutline<cr>", "SymbolsOutline" },
         ["p"] = { "<cmd>Telescope projects<cr>", "Projects" },
-        ["e"] = { "<cmd>NvimTreeToggle<CR>", "Explorer" },
+        ["e"] = { "<cmd>Neotree toggle<CR>", "Explorer" },
         ["E"] = { "<cmd>lua MiniFiles.open()<CR>", "MiniFiles Explorer" },
 
         b = {
