@@ -148,7 +148,7 @@ M.config = function()
                     display = {
                         format_message = function(msg)
                             if string.find(msg.title, "Indexing") then
-                                return nil     -- Ignore "Indexing..." progress messages
+                                return nil -- Ignore "Indexing..." progress messages
                             end
                             if msg.message then
                                 return msg.message
@@ -161,7 +161,7 @@ M.config = function()
 
                 notification = {
                     view = {
-                        stack_upwards = false,     -- Display notification items from bottom to top
+                        stack_upwards = false, -- Display notification items from bottom to top
                     },
 
                     window = {
@@ -282,6 +282,8 @@ M.config = function()
         { "soulis-1256/hoverhints.nvim" },
 
         -- A simple word switch plugin with neovim
+        -- Keymappings:
+        -- The default mapping is gs to switch the word.
         { 'tandy1229/wordswitch.nvim' },
 
         -- Library of 35+ independent Lua modules improving overall
