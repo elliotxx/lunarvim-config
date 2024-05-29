@@ -405,9 +405,15 @@ M.config = function()
                             "node_modules"
                         },
                     },
+                    follow_current_file = {
+                        -- This will find and focus the file in the active buffer every time
+                        -- the current file is changed while the tree is open.
+                        enabled = true,
+                    },
                     window = {
                         mappings = {
                             ['Y'] = "copy_selector",
+                            ["<tab>"] = "open",
                         },
                     },
                 },
