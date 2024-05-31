@@ -29,22 +29,21 @@ M.config = function()
     lvim.builtin.which_key.mappings = {
         [";"] = { "<cmd>Alpha<CR>", "Dashboard" },
         ["w"] = { "<cmd>w!<CR>", "Save" },
-        -- ["q"] = { "<cmd>lua require('lvim.utils.functions').smart_quit()<CR>", "Quit" },
         ["q"] = { "<cmd>confirm q<CR>", "Quit" },
         ["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle" },
         ["c"] = { "<cmd>BufferKill<CR>", "Close Buffer" },
         -- ["f"] = { require("lvim.core.telescope.custom-finders").find_project_files, "Find File" },
         -- Reference: https://github.com/junegunn/fzf#respecting-gitignore
-        ["f"] = {
-            "<cmd>let $FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git' | Files<CR>",
-            "Find File"
-        },
         -- ["f"] = {
         --     function()
         --         require("lvim.core.telescope.custom-finders").find_project_files { previewer = false }
         --     end,
         --     "Find File",
         -- },
+        ["f"] = {
+            "<cmd>let $FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git' | Files<CR>",
+            "Find File"
+        },
         ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
         ["o"] = { "<cmd>SymbolsOutline<cr>", "SymbolsOutline" },
         ["p"] = { "<cmd>Telescope projects<cr>", "Projects" },
@@ -53,12 +52,9 @@ M.config = function()
 
         b = {
             name = "Buffers",
-            -- j = { "<cmd>BufferLinePick<cr>", "Jump" },
-            -- f = { "<cmd>Telescope buffers<cr>", "Find" },
-            f = { "<cmd>Buffers<cr>", "Find buffers" },
-            k = { "<cmd>BufferLineCyclePrev<cr>", "Previous" },
+            f = { "<cmd>Telescope buffers<cr>", "Find buffers" },
             j = { "<cmd>BufferLineCycleNext<cr>", "Next" },
-            -- w = { "<cmd>BufferWipeout<cr>", "Wipeout" }, -- TODO: implement this for bufferline
+            k = { "<cmd>BufferLineCyclePrev<cr>", "Previous" },
             e = {
                 "<cmd>BufferLinePickClose<cr>",
                 "Pick which buffer to close",
