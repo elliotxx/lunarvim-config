@@ -33,6 +33,14 @@ M.config = function()
 
     -- Support for pasting text without copying underlying visual-selected text.
     lvim.keys.visual_mode["p"] = '"_dP'
+
+    -- Modify the default LSP keybinding, use lspsaga to improve experience.
+    lvim.lsp.buffer_mappings.normal_mode["K"] = { "<cmd>Lspsaga hover_doc<cr>", "Show hover" }
+    lvim.lsp.buffer_mappings.normal_mode["gd"] = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Goto definition" }
+    lvim.lsp.buffer_mappings.normal_mode["gD"] = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Goto Declaration" }
+    lvim.lsp.buffer_mappings.normal_mode["gr"] = { "<cmd>Lspsaga finder ref<cr>", "Goto references" }
+    lvim.lsp.buffer_mappings.normal_mode["gI"] = { "<cmd>Lspsaga finder imp<cr>", "Goto Implementation" }
+    lvim.lsp.buffer_mappings.normal_mode["gs"] = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "show signature help" }
 end
 
 return M

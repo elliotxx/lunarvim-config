@@ -49,9 +49,7 @@ M.config = function()
         -- symbols-outline.nvim
         {
             "simrat39/symbols-outline.nvim",
-            config = function()
-                require('symbols-outline').setup()
-            end
+            opts = {},
         },
 
         -- markdown-preview.nvim
@@ -105,22 +103,20 @@ M.config = function()
         },
 
         -- fzf for search
-        { 'junegunn/fzf',    build = ":call fzf#install()" },
-        { 'junegunn/fzf.vim' },
+        { "junegunn/fzf",    build = ":call fzf#install()" },
+        { "junegunn/fzf.vim" },
 
         -- Colorschemes
         {
             "Mofiqul/dracula.nvim",
-            config = function()
-                require("dracula").setup {
-                    -- use transparent background
-                    transparent_bg = true,        -- default false
-                    -- set custom lualine background color
-                    lualine_bg_color = "#44475a", -- default nil
-                    -- set italic comment
-                    italic_comment = true,        -- default false
-                }
-            end
+            opts = {
+                -- use transparent background
+                transparent_bg = true,        -- default false
+                -- set custom lualine background color
+                lualine_bg_color = "#44475a", -- default nil
+                -- set italic comment
+                italic_comment = true,        -- default false
+            },
         },
         { "catppuccin/nvim",          name = "catppuccin" },
         { "svrana/neosolarized.nvim", name = "neosolarized" },
@@ -129,9 +125,9 @@ M.config = function()
         -- glepnir/lspsaga.nvim
         -- Improves the Neovim built-in LSP experience.
         {
-            'nvimdev/lspsaga.nvim',
+            "nvimdev/lspsaga.nvim",
             config = function()
-                require('lspsaga').setup({})
+                require("lspsaga").setup({})
             end,
             dependencies = {
                 'nvim-treesitter/nvim-treesitter', -- optional
@@ -225,9 +221,7 @@ M.config = function()
         -- todo-comments is a lua plugin for Neovim 0.5 to highlight and search for todo comments like TODO, HACK, BUG in your code base.
         {
             "folke/todo-comments.nvim",
-            config = function()
-                require('todo-comments').setup {}
-            end,
+            opts = {},
             dependencies = {
                 { "nvim-lua/plenary.nvim" },
             },
@@ -284,13 +278,13 @@ M.config = function()
         -- A simple word switch plugin with neovim
         -- Keymappings:
         -- The default mapping is gs to switch the word.
-        { 'tandy1229/wordswitch.nvim' },
+        { "tandy1229/wordswitch.nvim" },
 
         -- Library of 35+ independent Lua modules improving overall
         -- Neovim (version 0.7 and higher) experience with minimal effort.
         -- https://github.com/echasnovski/mini.nvim
         {
-            'echasnovski/mini.nvim',
+            "echasnovski/mini.nvim",
             version = '*',
             config = function()
                 -- Show notifications
@@ -328,14 +322,25 @@ M.config = function()
                 -- otherwise.
                 require('mini.splitjoin').setup {}
                 -- Fast and feature-rich surround actions
-                -- Keymappings:
-                -- add = 'sa', -- Add surrounding in Normal and Visual modes
-                require('mini.surround').setup {}
+                require('mini.surround').setup {
+                    -- Module mappings. Use `''` (empty string) to disable one.
+                    mappings = {
+                        add = 'qa',            -- Add surrounding in Normal and Visual modes
+                        delete = 'qd',         -- Delete surrounding
+                        find = 'qf',           -- Find surrounding (to the right)
+                        find_left = 'qF',      -- Find surrounding (to the left)
+                        highlight = 'qh',      -- Highlight surrounding
+                        replace = 'qr',        -- Replace surrounding
+                        update_n_lines = 'qn', -- Update `n_lines`
+
+                        suffix_last = 'l',     -- Suffix to search with "prev" method
+                        suffix_next = 'n',     -- Suffix to search with "next" method
+                    }, }
             end,
         },
 
         -- Use treesitter to auto close and auto rename html tag
-        { 'windwp/nvim-ts-autotag' },
+        { "windwp/nvim-ts-autotag" },
 
         -- LSP signature hint as you type
         {
@@ -414,6 +419,8 @@ M.config = function()
                         mappings = {
                             ['Y'] = "copy_selector",
                             ["<tab>"] = "open",
+                            ["o"] = "open",
+                            ["O"] = "show_help",
                         },
                     },
                 },

@@ -26,9 +26,6 @@ require("user.indentlines").config()
 -- Alpha
 require("user.alpha").config()
 
--- Nvim-tree
-require("user.nvimtree").config()
-
 -- Terminal
 require("user.terminal").config()
 
