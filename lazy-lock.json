@@ -67,7 +67,7 @@
   "toggleterm.nvim": { "branch": "main", "commit": "066cccf48a43553a80a210eb3be89a15d789d6e6" },
   "tokyonight": { "branch": "main", "commit": "0fae425aaab04a5f97666bd431b96f2f19c36935" },
   "tokyonight.nvim": { "branch": "main", "commit": "67afeaf7fd6ebba000633e89f63c31694057edde" },
-  "trouble.nvim": { "branch": "main", "commit": "bda8de4205f06c3939b8b59e4da1f3713d04ea05" },
+  "trouble.nvim": { "branch": "main", "commit": "83cfe1b3fd5ebb807119500534d2c8334375a305" },
   "vim-illuminate": { "branch": "master", "commit": "e522e0dd742a83506db0a72e1ced68c9c130f185" },
   "which-key.nvim": { "branch": "main", "commit": "4433e5ec9a507e5097571ed55c02ea9658fb268a" },
   "wordswitch.nvim": { "branch": "main", "commit": "0d63af458d30376f9b3f1be7a5a82be0b59cacc0" }

@@ -38,7 +38,7 @@ M.config = function()
 
     -- Modify the default LSP keybinding, use lspsaga to improve experience.
     lvim.lsp.buffer_mappings.normal_mode["K"] = { "<cmd>Lspsaga hover_doc<cr>", "Show hover" }
-    lvim.lsp.buffer_mappings.normal_mode["gd"] = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Goto definition" }
+    lvim.lsp.buffer_mappings.normal_mode["gd"] = { "<cmd>Telescope lsp_definitions<cr>", "Goto definition" }
     lvim.lsp.buffer_mappings.normal_mode["gD"] = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Goto Declaration" }
     lvim.lsp.buffer_mappings.normal_mode["gr"] = { "<cmd>Lspsaga finder ref<cr>", "Goto references" }
     lvim.lsp.buffer_mappings.normal_mode["gI"] = { "<cmd>Lspsaga finder imp<cr>", "Goto Implementation" }
