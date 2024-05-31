@@ -426,6 +426,17 @@ M.config = function()
                 },
             },
         },
+
+        -- A Neovim plugin helping you establish good command workflow and quit bad habit
+        {
+            "m4xshen/hardtime.nvim",
+            dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+            opts = {
+                disabled_filetypes = { "qf", "netrw", "NvimTree", "lazy", "mason", "oil", "neo-tree" },
+                disable_mouse = false,
+                restriction_mode = "hint",
+            }
+        },
     }
 end
 
