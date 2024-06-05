@@ -9,8 +9,8 @@ M.config = function()
     -- https://gitlab.com/lostneophyte/dotfiles/-/blob/5d49006532bf57db9f7e09564cb43010f631c571/lvim/.config/lvim/lua/user/telescope.lua
     lvim.builtin.telescope.defaults.layout_config = {
         prompt_position = "top",
-        height = 0.8,
-        width = 0.8,
+        height = 0.85,
+        width = 0.85,
         bottom_pane = {
             height = 25,
             preview_cutoff = 120,

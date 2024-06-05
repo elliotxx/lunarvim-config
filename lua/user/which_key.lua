@@ -275,9 +275,12 @@ M.config = function()
 
         r = {
             name = "Replace",
-            f = { "<cmd>lua require('spectre').open_file_search()<CR>", "Replace File" },
-            p = { "<cmd>lua require('spectre').open()<CR>", "Replace Project" },
-            s = { "<cmd>lua require('spectre').open_visual({select_word=true})<CR>", "Search" },
+            -- f = { "<cmd>lua require('spectre').open_file_search()<CR>", "Replace File" },
+            -- p = { "<cmd>lua require('spectre').open()<CR>", "Replace Project" },
+            -- s = { "<cmd>lua require('spectre').open_visual({select_word=true})<CR>", "Search" },
+            f = { "<cmd>lua require('grug-far').grug_far({ prefills = { flags = vim.fn.expand('%') } })<CR>", "Replace File" },
+            p = { "<cmd>lua require('grug-far').grug_far()<CR>", "Replace Project" },
+            w = { "<cmd>lua require('grug-far').grug_far({ prefills = { search = vim.fn.expand('<cword>') } })<CR>", "Search with current word" },
         },
 
         u = {

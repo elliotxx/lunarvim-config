@@ -437,6 +437,14 @@ M.config = function()
                 restriction_mode = "hint",
             }
         },
+
+        -- Plugin in the attempt ⬇️
+        {
+            'MagicDuck/grug-far.nvim',
+            config = function()
+                require('grug-far').setup {}
+            end
+        },
     }
 end
 
