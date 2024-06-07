@@ -2,6 +2,7 @@ local M = {}
 
 M.config = function()
     lvim.leader = "space"
+    vim.g.maplocalleader = ','
     -- add your own keymapping
     lvim.keys.normal_mode["<D-s>"] = ":w<cr>"
     lvim.keys.normal_mode["|"] = ":vsplit<CR>"
