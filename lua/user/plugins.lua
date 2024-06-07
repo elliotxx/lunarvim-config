@@ -435,9 +435,8 @@ M.config = function()
             end
         },
 
-        -- https://github.com/folke/noice.nvim
         -- 💥 Highly experimental plugin that completely replaces the UI for messages, cmdline and the popupmenu.
-        -- lazy.nvim
+        -- https://github.com/folke/noice.nvim
         {
             "folke/noice.nvim",
             event = "VeryLazy",
@@ -455,7 +454,14 @@ M.config = function()
                 -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
                 "MunifTanjim/nui.nvim",
             },
-        }
+        },
+
+        -- Free, ultrafast Copilot alternative for Vim and Neovim
+        -- https://github.com/Exafunction/codeium.vim
+        {
+            'Exafunction/codeium.vim',
+            event = 'BufEnter'
+        },
     }
 end
 
