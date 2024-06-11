@@ -103,8 +103,15 @@ M.config = function()
         },
 
         -- fzf for search
-        { "junegunn/fzf",    build = ":call fzf#install()" },
-        { "junegunn/fzf.vim" },
+        {
+            "junegunn/fzf",
+            commit = "3ee1fc203406debab432dbf3cb67f37ea7cb3d30",
+            build = ":call fzf#install()"
+        },
+        {
+            "junegunn/fzf.vim",
+            commit = "0a80e43f9027ec64213d602dbb0b22d65a072ca8",
+        },
 
         -- Colorschemes
         {
@@ -135,38 +142,38 @@ M.config = function()
             }
         },
 
-        -- j-hui/fidget.nvim. Standalone UI for nvim-lsp progress.
-        {
-            "j-hui/fidget.nvim",
-            tag = "v1.0.0",
-            opts = {
-                progress = {
-                    display = {
-                        format_message = function(msg)
-                            if string.find(msg.title, "Indexing") then
-                                return nil -- Ignore "Indexing..." progress messages
-                            end
-                            if msg.message then
-                                return msg.message
-                            else
-                                return msg.done and "Completed" or "In progress..."
-                            end
-                        end,
-                    },
-                },
+        -- -- j-hui/fidget.nvim. Standalone UI for nvim-lsp progress.
+        -- {
+        --     "j-hui/fidget.nvim",
+        --     tag = "v1.0.0",
+        --     opts = {
+        --         progress = {
+        --             display = {
+        --                 format_message = function(msg)
+        --                     if string.find(msg.title, "Indexing") then
+        --                         return nil -- Ignore "Indexing..." progress messages
+        --                     end
+        --                     if msg.message then
+        --                         return msg.message
+        --                     else
+        --                         return msg.done and "Completed" or "In progress..."
+        --                     end
+        --                 end,
+        --             },
+        --         },
 
-                notification = {
-                    view = {
-                        stack_upwards = false, -- Display notification items from bottom to top
-                    },
+        --         notification = {
+        --             view = {
+        --                 stack_upwards = false, -- Display notification items from bottom to top
+        --             },
 
-                    window = {
-                        relative = "editor",
-                        winblend = 0,
-                    },
-                },
-            },
-        },
+        --             window = {
+        --                 relative = "editor",
+        --                 winblend = 0,
+        --             },
+        --         },
+        --     },
+        -- },
 
         -- ThePrimeagen/refactoring.nvim
         -- Support for various common refactoring operations
@@ -288,7 +295,7 @@ M.config = function()
             version = '*',
             config = function()
                 -- Show notifications
-                require('mini.notify').setup {}
+                -- require('mini.notify').setup {}
                 -- Extend and create a/i textobjects
                 require('mini.ai').setup {}
                 -- Navigate and manipulate file system
@@ -342,13 +349,13 @@ M.config = function()
         -- Use treesitter to auto close and auto rename html tag
         { "windwp/nvim-ts-autotag" },
 
-        -- LSP signature hint as you type
-        {
-            "ray-x/lsp_signature.nvim",
-            event = "VeryLazy",
-            opts = {},
-            config = function(_, opts) require 'lsp_signature'.setup(opts) end
-        },
+        -- -- LSP signature hint as you type
+        -- {
+        --     "ray-x/lsp_signature.nvim",
+        --     event = "VeryLazy",
+        --     opts = {},
+        --     config = function(_, opts) require 'lsp_signature'.setup(opts) end
+        -- },
 
         -- Neovim plugin to manage the file system and other tree like structures.
         {
@@ -460,7 +467,14 @@ M.config = function()
         -- https://github.com/Exafunction/codeium.vim
         {
             'Exafunction/codeium.vim',
-            event = 'BufEnter'
+            commit = '289eb72',
+            event = 'BufEnter',
+            config = function()
+                -- C-y will accept the suggestion completion of codeium.
+                vim.keymap.set('i', '<C-y>', function()
+                    return vim.fn['codeium#Accept']()
+                end, { expr = true })
+            end
         },
     }
 end
