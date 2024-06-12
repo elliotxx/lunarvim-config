@@ -471,7 +471,7 @@ M.config = function()
             event = 'BufEnter',
             config = function()
                 -- C-y will accept the suggestion completion of codeium.
-                vim.keymap.set('i', '<C-y>', function()
+                vim.keymap.set('i', '<C-;>', function()
                     return vim.fn['codeium#Accept']()
                 end, { expr = true })
             end
