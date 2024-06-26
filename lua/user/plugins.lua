@@ -399,6 +399,12 @@ M.config = function()
                             vim.notify('Copied: ' .. result)
                         end)
                     end,
+                    image_wezterm = function(state)
+                        local node = state.tree:get_node()
+                        if node.type == "file" then
+                            require("image_preview").PreviewImage(node.path)
+                        end
+                    end,
                 },
                 filesystem = {
                     filtered_items = {
@@ -426,6 +432,8 @@ M.config = function()
                             ["<tab>"] = "open",
                             ["o"] = "open",
                             ["O"] = "show_help",
+                            ["P"] = { "toggle_preview", config = { use_float = false, use_image_nvim = true } },
+                            ["<leader>p"] = "image_wezterm", -- " or another map
                         },
                     },
                 },
@@ -472,6 +480,16 @@ M.config = function()
                 vim.keymap.set('i', '<C-;>', function()
                     return vim.fn['codeium#Accept']()
                 end, { expr = true })
+            end
+        },
+
+        -- https://github.com/adelarsq/image_preview.nvim
+        -- Image Preview for Neovim 🖼
+        {
+            'adelarsq/image_preview.nvim',
+            event = 'VeryLazy',
+            config = function()
+                require("image_preview").setup()
             end
         },
     }
