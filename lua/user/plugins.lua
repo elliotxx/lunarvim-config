@@ -125,9 +125,7 @@ M.config = function()
                 italic_comment = true,        -- default false
             },
         },
-        { "catppuccin/nvim",          name = "catppuccin" },
-        { "svrana/neosolarized.nvim", name = "neosolarized" },
-        { "folke/tokyonight.nvim",    name = "tokyonight" },
+        { "catppuccin/nvim",       name = "catppuccin", priority = 1000 },
 
         -- glepnir/lspsaga.nvim
         -- Improves the Neovim built-in LSP experience.

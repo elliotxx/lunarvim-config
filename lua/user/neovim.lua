@@ -2,8 +2,8 @@ local M = {}
 
 M.config = function()
     lvim.log.level = "warn"
-    lvim.colorscheme = "dracula"
-    -- lvim.colorscheme = "catppuccin"
+    -- lvim.colorscheme = "dracula"
+    lvim.colorscheme = "catppuccin"
     -- lvim.colorscheme = "tokyonight-moon"
     -- lvim.colorscheme = "tokyonight-day"
 
