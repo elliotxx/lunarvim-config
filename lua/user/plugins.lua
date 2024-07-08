@@ -492,6 +492,14 @@ M.config = function()
                 require("image_preview").setup()
             end
         },
+
+        -- https://github.com/kcl-lang/kcl.nvim
+        {
+            "kcl-lang/kcl.nvim",
+            ft = {
+                "kcl",
+            },
+        },
     }
 end
 
