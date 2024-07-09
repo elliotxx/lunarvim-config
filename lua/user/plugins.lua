@@ -441,6 +441,7 @@ M.config = function()
         },
 
         -- Plugin in the attempt ⬇️
+        -- Find And Replace plugin for neovim
         {
             'MagicDuck/grug-far.nvim',
             config = function()
@@ -499,6 +500,22 @@ M.config = function()
             ft = {
                 "kcl",
             },
+        },
+
+        -- 📸 Snapshot plugin with rich features that can
+        -- make pretty code snapshots for Neovim.
+        {
+            "mistricky/codesnap.nvim",
+            build = "make",
+            config = function()
+                require("codesnap").setup({
+                    has_breadcrumbs = true,
+                    has_line_number = true,
+                    show_workspace = true,
+                    bg_x_padding = 100,
+                    bg_y_padding = 60,
+                })
+            end
         },
     }
 end

@@ -45,7 +45,8 @@ M.config = function()
     )
 
     -- Formatters
-    lvim.format_on_save = { enabled = true, pattern = "^(?!.*.k$).*", timeout = 2000 }
+    -- lvim.format_on_save = { enabled = true, pattern = "^(?!.*.k$).*", timeout = 2000 }
+    lvim.format_on_save = { enabled = true, pattern = "*", timeout = 2000 }
     -- set a formatter, this will override the language server formatting capabilities
     -- (if it exists)
     formatters = require "lvim.lsp.null-ls.formatters"

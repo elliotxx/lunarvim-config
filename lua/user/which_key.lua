@@ -25,7 +25,14 @@ M.config = function()
             F = { "<Esc><cmd>lua require('refactoring').refactor('Extract Function To File')<CR>",
                 "Extract Function To File" },
         },
+
+        u = {
+            name = "Utils",
+            c = { "<Esc><cmd>'<,'>CodeSnap<cr>", "Save selected code snapshot into clipboard" },
+            a = { "<Esc><cmd>'<,'>CodeSnapASCII<cr>", "Save selected code snapshot in ASCII into clipboard" },
+        }
     }
+
     lvim.builtin.which_key.mappings = {
         [";"] = { "<cmd>Alpha<CR>", "Dashboard" },
         ["w"] = { "<cmd>w!<CR>", "Save" },
@@ -275,12 +282,12 @@ M.config = function()
 
         r = {
             name = "Replace",
-            -- f = { "<cmd>lua require('spectre').open_file_search()<CR>", "Replace File" },
-            -- p = { "<cmd>lua require('spectre').open()<CR>", "Replace Project" },
-            -- s = { "<cmd>lua require('spectre').open_visual({select_word=true})<CR>", "Search" },
-            f = { "<cmd>lua require('grug-far').grug_far({ prefills = { flags = vim.fn.expand('%') } })<CR>", "Replace File" },
-            p = { "<cmd>lua require('grug-far').grug_far()<CR>", "Replace Project" },
-            w = { "<cmd>lua require('grug-far').grug_far({ prefills = { search = vim.fn.expand('<cword>') } })<CR>", "Search with current word" },
+            f = { "<cmd>lua require('spectre').open_file_search()<CR>", "Replace File" },
+            p = { "<cmd>lua require('spectre').open()<CR>", "Replace Project" },
+            s = { "<cmd>lua require('spectre').open_visual({select_word=true})<CR>", "Search" },
+            -- f = { "<cmd>lua require('grug-far').grug_far({ prefills = { flags = vim.fn.expand('%') } })<CR>", "Replace File" },
+            -- p = { "<cmd>lua require('grug-far').grug_far()<CR>", "Replace Project" },
+            -- w = { "<cmd>lua require('grug-far').grug_far({ prefills = { search = vim.fn.expand('<cword>') } })<CR>", "Search with current word" },
         },
 
         u = {
