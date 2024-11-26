@@ -495,12 +495,12 @@ M.config = function()
         },
 
         -- https://github.com/kcl-lang/kcl.nvim
-        {
-            "kcl-lang/kcl.nvim",
-            ft = {
-                "kcl",
-            },
-        },
+        -- {
+        --     "kcl-lang/kcl.nvim",
+        --     ft = {
+        --         "kcl",
+        --     },
+        -- },
 
         -- 📸 Snapshot plugin with rich features that can
         -- make pretty code snapshots for Neovim.
