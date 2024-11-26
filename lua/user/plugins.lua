@@ -517,6 +517,22 @@ M.config = function()
                 })
             end
         },
+
+        -- https://github.com/sphamba/smear-cursor.nvim
+        -- Neovim plugin to animate the cursor with a smear effect
+        {
+            "sphamba/smear-cursor.nvim",
+            opts = {},
+        },
+
+        -- https://github.com/karb94/neoscroll.nvim
+        -- Smooth scrolling neovim plugin written in lua
+        {
+            "karb94/neoscroll.nvim",
+            config = function()
+                require('neoscroll').setup({})
+            end
+        },
     }
 end
 
